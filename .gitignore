@@ -4,10 +4,12 @@
 /public/bundles/
 /var/
 /vendor/
+
 ###< symfony/framework-bundle ###
+
+!/var/data/*
 
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
-
 /.idea/
