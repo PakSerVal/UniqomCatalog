@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="header">Каталог автомобилей</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <caption class="text-center">UNIQOM</caption>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Марка</th>
+                            <th>Модель</th>
+                            <th>Положение руля</th>
+                            <th>Действия</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for car in cars %}
+                            <tr>
+                                <th scope="row">{{ car.id}}</th>
+                                <td>{{ car.brand }}</td>
+                                <td>{{ car.model }}</td>
+                                <td>{{ car.helm }}</td>
+                                <td>
+                                    <a href="{{ path('edit_car', {carId: car.id}) }}">
+                                        <i class="material-icons" style="font-size:25px">edit</i>
+                                    </a>
+                                    <a href="{{ path('delete_car', {carId: car.id}) }}" onclick="return confirm('Удалить?');">
+                                        <i class="material-icons" style="font-size:25px; color: red">cancel</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    <a href="{{ path('add_car') }}">
+                                        <button class="btn btn-success">Добавить новый автомобиль</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="navigation text-center">
+            {{ knp_pagination_render(cars) }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+h2 {
+    text-align: center;
+}
+
+table caption {
+    padding: .5em 0;
+}
+
+@media screen and (max-width: 767px) {
+    table caption {
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+.p {
+    text-align: center;
+    padding-top: 140px;
+    font-size: 14px;
+}
+
+form[name=car] {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.header {
+    text-align: center;
+    height: 50px;
+    padding: 5px;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    margin-bottom: 10px;
+}
+
+

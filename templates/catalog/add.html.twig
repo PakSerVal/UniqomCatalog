@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="header">Добавление автомобиля</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                {{ form_start(form, {method: 'POST', action: path('add_car')}) }}
+                <fieldset>
+                    <div class="form-group">
+                        {{ form_widget(form) }}
+                    </div>
+                </fieldset>
+                <input type="submit" value="Добавить" class="btn btn-success">
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
